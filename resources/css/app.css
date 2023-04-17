@@ -1,0 +1,53 @@
+@import '../../node_modules/leaflet/dist/leaflet.css';
+@import '../../node_modules/leaflet-draw/dist/leaflet.draw.css';
+@import '../../node_modules/leaflet-draw/dist/leaflet.draw-src.css';
+@import '../../node_modules/slim-select/dist/slimselect.css';
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import '../../node_modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css';
+@import '../../node_modules/leaflet.bigimage/dist/Leaflet.BigImage.min.css';
+
+.footer{
+    position: relative;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+#menu{
+    min-height: 100vh;
+}
+
+#map {
+    margin: 0;
+    /* overflow: hidden; */
+    position: relative;
+    /* width: 600px; */
+    height: 400px;
+    border: 2px solid #333;
+    border-radius: 5px;
+/* margin-bottom: 200px; */
+}
+
+.leaflet-attribution-flag{
+    display: none;
+}
+
+@media (min-width: 766px) {
+    #mobile_menu
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 766px) {
+    #mobile_menu
+    {
+        display: block;
+    }
+    #menu
+    {
+        display: none;
+    }
+}

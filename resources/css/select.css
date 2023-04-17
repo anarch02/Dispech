@@ -1,0 +1,80 @@
+/* form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form .select_multi {
+  width: 50%;
+  background: #F3F3F3;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: 1px solid #DDDDDD;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+form .seleselect_multict::placeholder {
+  font: 18px Roboto-Regular;
+  color: #4c5461;
+}
+
+form .select_multi:::focus,
+form .select_multi:::active {
+  border: 1px solid #FF9900;
+  outline: none;
+}
+
+.select_multi {
+  position: relative;
+  z-index: 9;
+  padding: 0;
+}
+
+.select_multi a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 13px 20px;
+}
+
+.select_multi ul {
+  display: none;
+  background: #F3F3F3;
+  height: 150px;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  left: -1px;
+  overflow: auto;
+  border: 1px solid #DDDDDD;
+  border-radius: 0 0 30px 30px;
+}
+
+.select_multi ul li {
+  display: flex;
+  align-items: center;
+  padding: 13px 20px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.select_multi ul li label {
+  margin-left: 15px;
+}
+
+.select_multi ul li label:hover {
+  cursor: pointer;
+}
+
+.select_multi ul li:last-child {
+  border: none;
+} */
+
+
+/* .bootstrap-select .bs-ok-default::after {
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.1em 0.1em 0;
+  transform: rotate(45deg) translateY(0.5rem);
+}
+
+.btn.dropdown-toggle:focus {
+  outline: none !important;
+} */

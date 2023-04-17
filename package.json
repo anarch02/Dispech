@@ -1,0 +1,33 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "axios": "^1.1.2",
+        "bootstrap": "^5.2.3",
+        "laravel-vite-plugin": "^0.7.2",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "sass": "^1.56.1",
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "bootstrap-icons": "^1.10.3",
+        "esri-leaflet": "^3.0.10",
+        "esri-leaflet-geocoder": "^3.1.4",
+        "esri-leaflet-vector": "^4.0.1",
+        "jquery": "^3.6.3",
+        "leaflet": "^1.9.3",
+        "leaflet-draw": "^1.0.4",
+        "leaflet-easyprint": "^2.1.9",
+        "leaflet-search": "^3.0.9",
+        "leaflet.bigimage": "^1.0.1",
+        "select": "^1.1.2",
+        "slim-select": "^2.4.3",
+        "sweetalert": "^2.1.2",
+        "sweetalert2": "^11.7.2"
+    }
+}
