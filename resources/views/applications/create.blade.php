@@ -32,73 +32,35 @@
             <td>{{__('Номер телефона')}}</td>
             <td>{{Auth::user()->phone_number}}</td>
           </tr>
-
-          <tr>
-            <td>{{__('Устройства')}}</td>
-            <td>
-              <div class="dropdown mt-2">
-                <select id="selectElement" class="@error('drones') border-danger @enderror" name="drones[]" multiple>
-                  @foreach ($drones as $drone)
-                    <option value="{{$drone->id}}"> {{$drone->id_number}} </option>    
-                  @endforeach
-                </select>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>{{__('Пилоты')}}</td>
-            <td>
-              <div class="dropdown mt-2">
-                <select id="multiple" class="@error('pilots') border-danger @enderror" name="pilots[]" multiple>
-                  @foreach ($pilots as $pilot)
-                    <option value="{{$pilot->id}}"> {{$pilot->name}} </option>    
-                  @endforeach
-                </select>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>{{__('Высота')}}</td>
-            <td>
-              <input type="text"  name="height" 
-              id="height" class="form-control mb-2 @error('height') border-danger @enderror">
-            </td>
-          </tr>
-
-          <tr>
-            <td>{{__('Радиус')}}</td>
-            <td>
-              <input type="text" id="radius" name="radius" 
-              id="radius" class="form-control mb-2 @error('radius') border-danger @enderror">
-            </td>
-          </tr>
-
-          <tr>
-            <td>{{__('Местность')}}</td>
-            <td>
-              <input type="text"  name="place" 
-              id="place" class="form-control mb-2 @error('place') border-danger @enderror">
-            </td>
-          </tr>
-
-          <tr>
-            <td>{{__('Причина')}}</td>
-            <td>
-              <input type="text"  name="cause" 
-              id="cause" class="form-control mb-2 @error('cause') border-danger @enderror">
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
 
+    <div class="mt-5">
+      <div class="mt-2">
+        <label for="drones" class="form-label">{{__('Устройства')}}</label>
+        <select id="selectElement" class="@error('drones') border-danger @enderror" name="drones[]" multiple>
+          @foreach ($drones as $drone)
+            <option value="{{$drone->id}}"> {{$drone->id_number}} </option>    
+          @endforeach
+        </select>
+      </div>
+
+      <div class="mt-2">
+        <label for="drones" class="form-label">{{__('Пилоты')}}</label>
+        <select id="multiple" class="@error('pilots') border-danger @enderror" name="pilots[]" multiple>
+          @foreach ($pilots as $pilot)
+            <option value="{{$pilot->id}}"> {{$pilot->name}} </option>    
+          @endforeach
+        </select>
+      </div>
+    </div>
+
     
-    <div class="mt-2">
-      <h4 class="text-center">
+    <div class="mt-5">
+      <h2 class="text-center">
         {{__('More information')}}
-      </h4>
+      </h2>
     </div>
 
 
@@ -116,17 +78,67 @@
     <table class="table">
       <tbody>
         <tr>
+          <td>{{__('Высота')}}</td>
           <td>
-            <label for="startDate">{{__('С')}}</label>
-            <input type="datetime-local" name="startDate" class="form-control @error('startDate') border-danger @enderror" id="startDate">
+
+            <div class="input-group mb-3">
+              <input type="text"  name="height" 
+              id="height" class="form-control @error('height') border-danger @enderror" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <span class="input-group-text" id="basic-addon2">Метров</span>
+            </div>
           </td>
+        </tr>
+
+        <tr>
+          <td>{{__('Радиус')}}</td>
           <td>
-            <label for="startDate">{{__('По')}}</label>
-            <input type="datetime-local" name="finishDate" class="form-control @error('finishDate') border-danger @enderror" id="finishDate">
+            <div class="input-group mb-3">
+              <input type="text" id="radius" name="radius" 
+              id="radius" class="form-control @error('radius') border-danger @enderror" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <span class="input-group-text" id="basic-addon2">Метров</span>
+            </div>
+          </td>
+
+        </tr>
+
+        <tr>
+          <td>{{__('Координаты местности')}}</td>
+          <td>
+            <input type="text"  name="place" 
+            id="place" class="form-control mb-2 @error('place') border-danger @enderror">
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{__('Местность')}}</td>
+          <td>
+            <input type="text"  name="place" 
+            id="place" class="form-control mb-2 @error('place') border-danger @enderror">
           </td>
         </tr>
       </tbody>
     </table>
+
+    <div class="mt-3">
+      <h4 class="text">{{__('Период на разрешения')}}</h4>
+
+      <div class="row">
+        <div class="col">
+          <label for="startDate">{{__('От')}}</label>
+          <input type="datetime-local" name="finishDate" class="form-control @error('finishDate') border-danger @enderror" id="finishDate">
+        </div>
+        <div class="col">
+          <label for="startDate">{{__('До')}}</label>
+          <input type="datetime-local" name="startDate" class="form-control @error('startDate') border-danger @enderror" id="startDate">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mt-5">
+      <textarea name="cause" 
+      id="cause" class="form-control @error('cause') border-danger @enderror" style="height: 100px"></textarea>
+      <label for="cause">{{__('Причина')}}</label>
+    </div>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -140,6 +152,6 @@
     
 
 
-    <button class="w-100 btn btn-primary btn-lg" id="addApplicationBtn" type="submit">{{__('Отправить')}}</button>
+    <button class="w-100 mt-5 btn btn-primary btn-lg" id="addApplicationBtn" type="submit">{{__('Отправить')}}</button>
   </form>
 @endsection

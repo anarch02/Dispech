@@ -83,7 +83,7 @@
             
             <div class="mt-2">
               <label for="title"> {{__('E-mail')}} </label>
-              <input autocomplete="off" class="form-control" type="email" name="email" id="email">
+              <input autocomplete="off" class="form-control" type="text" name="login" id="login">
             </div>
 
             <div>

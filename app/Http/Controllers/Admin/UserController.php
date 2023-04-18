@@ -34,12 +34,9 @@ class UserController extends Controller
         // dd($request);
         $data = $request->validate([
             'name' => ['required'],
-            'isOrganizationSuperAdmin' => ['nullable'],
-            'isOrganizationAdmin' => ['nullable'],
-            'isOrganizationPilot' => ['nullable'],
             'phone_number' => ['required'],
             'organization_id' => ['required'],
-            'email' => ['required', 'unique:users', 'unique:admin_users', 'email'],
+            'login' => ['required', 'unique:users', 'unique:admin_users'],
             'password' => ['required', 'confirmed']
         ]);
 
@@ -79,9 +76,6 @@ class UserController extends Controller
 
         $data = $request->validate([
             'name' => ['required'],
-            'isOrganizationSuperAdmin' => ['nullable'],
-            'isOrganizationAdmin' => ['nullable'],
-            'isOrganizationPilot' => ['nullable'],
             'phone_number' => ['required'],
             'organization_id' => ['required'],
             'login' => ['required'],

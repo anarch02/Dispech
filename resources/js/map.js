@@ -188,11 +188,12 @@ if(input != null)
 
         const form = document.querySelector('form');
 
-        for (let i = 0; i< lat.length; i++) {
-            const inputLat = createInput('lat[]', lat[i]);
-            form.appendChild(inputLat);
-            const inputLng = createInput('lng[]', lng[i]);
-            form.appendChild(inputLng);
+        var objects = layer.getLatLngs()[0];
+        for (var i = 0; i < objects.length; i++){
+          const inputLat = createInput('lat[]', objects[i].lat);
+          form.appendChild(inputLat);
+          const inputLng = createInput('lng[]', objects[i].lng);
+          form.appendChild(inputLng);
         }
 
         function createInput(name, value) {
@@ -207,8 +208,7 @@ if(input != null)
         $('#lats').val(lats);
       }
 
-        console.log([layer.getLatLng().lat, layer.getLatLng().lng]);
-        console.log(layer._mRadius);
+      
 
         var cordinates = e.layer._latlngs;
         var centerLat = e.target._lastCenter.lat;
@@ -223,11 +223,6 @@ if(input != null)
         $('#centerLat').val(centerLat);
         $('#centerLng').val(centerLng);
         $('#zoom').val(zoom);
-
-        const inputLat = createInput('lat[]', layer.getLatLng().lat);
-        form.appendChild(inputLat);
-        const inputLng = createInput('lng[]', layer.getLatLng().lng);
-        form.appendChild(inputLng);
 
         function createInput(name, value) {
             const input = document.createElement("input");
@@ -365,3 +360,4 @@ if(input != null)
 }
 
 // L.control.bigImage({position: 'topright'}).addTo(map);
+
