@@ -45,6 +45,8 @@ $(addAdmin).on('submit', function(event){
     });
 });
 
+
+
 // Edit model
 $('body').on('click', '#update-admin-button', function(){
     var id = $(this).data('id');
