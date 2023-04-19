@@ -21,11 +21,15 @@ return new class extends Migration
             $table->id();
             $table->string('slug');
             $table->string('name');
+            $table->string('leader');
+            $table->boolean('isActive')->default('true');
             $table->foreignIdFor(Region::class)
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->string('address');
+            $table->string('first_contact_number');
+            $table->string('second_contact_number')->nullable();
             $table->timestamps();
             
         });

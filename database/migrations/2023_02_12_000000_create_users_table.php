@@ -29,19 +29,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('organizations_users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->foreignIdFor(Organization::class)
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-            $table->foreignIdFor(User::class)
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-            $table->timestamps();
-        });
+        
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Models\Application;
 use App\Models\Drones;
 use App\Models\Organization;
+use App\Models\Pilots;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -33,6 +34,7 @@ return new class extends Migration
             $table->string('file')->nullable();
             $table->string('radius');
             $table->string('place');
+            $table->string('place_coordinates');
             $table->string('cause')->nullable();
             $table->boolean('status')->default(false);
             $table->boolean('isActive')->default(true);
@@ -54,13 +56,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('application_user', function (Blueprint $table) {
+        Schema::create('application_pilots', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Application::class)
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->foreignIdFor(User::class)
+            $table->foreignIdFor(Pilots::class)
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();

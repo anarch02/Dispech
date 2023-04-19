@@ -22,7 +22,22 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+            $table->boolean('isActive')->default('true');
             $table->string('phone_number')->unique();
+            $table->timestamps();
+        });
+
+        Schema::create('organizations_pilots', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignIdFor(Organization::class)
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+            $table->foreignIdFor(Pilots::class)
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

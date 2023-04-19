@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('login')->unique();
             $table->string('phone_number')->unique();
             $table->string('password');
+            $table->boolean('isActive')->default('true');
             $table->rememberToken();
             $table->timestamps();
         });

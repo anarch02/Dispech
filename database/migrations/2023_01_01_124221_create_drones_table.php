@@ -28,6 +28,7 @@ return new class extends Migration
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->string('id_number')->unique();
+            $table->boolean('isActive')->default('true');
             $table->timestamps();
         });
 

@@ -21,7 +21,9 @@ class OrganizationFactory extends Factory
         return [
             'name' => ucfirst($this->faker->words(3, true)),
             'region_id' => Region::query()->inRandomOrder()->value('id'),
-            'address' => $this->faker->address()
+            'leader' => $this->faker->name(),
+            'address' => $this->faker->address(),
+            'first_contact_number' => $this->faker->phoneNumber()
         ];
     }
 }
