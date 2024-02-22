@@ -5,6 +5,8 @@
 @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 @import '../../node_modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css';
 @import '../../node_modules/leaflet.bigimage/dist/Leaflet.BigImage.min.css';
+@import './admin.css';
+@import '../../node_modules/fontawesome-free/css/all.css';
 
 .footer{
     position: relative;
